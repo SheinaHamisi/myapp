@@ -9,12 +9,12 @@ public class Salon {
     private String location;
     private String phone;
     private Integer rating;
-    private Integer workingHours;
+    private String workingHours;
 
     public Salon() {
     }
 
-    public Salon(Long id, String name, String image, String location, String phone, Integer rating, Integer workingHours) {
+    public Salon(Long id, String name, String image, String location, String phone, Integer rating, String workingHours) {
         this.id = id;
         this.name = name;
         this.image = image;
@@ -72,11 +72,11 @@ public class Salon {
         this.rating = rating;
     }
 
-    public Integer getWorkingHours() {
+    public String getWorkingHours() {
         return workingHours;
     }
 
-    public void setWorkingHours(Integer workingHours) {
+    public void setWorkingHours(String workingHours) {
         this.workingHours = workingHours;
     }
 
