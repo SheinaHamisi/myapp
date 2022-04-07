@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputLayout;
@@ -19,7 +20,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @BindView(R.id.password) TextInputLayout password;
     @BindView(R.id.Register) TextView register;
     @BindView(R.id.Login) Button Login;
-    @BindView(R.id.arrow) Button arrow;
+    @BindView(R.id.arrow) ImageView arrow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
