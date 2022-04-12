@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "6149816482",
+    "project_id": "ladiesspot-d6586",
+    "storage_bucket": "ladiesspot-d6586.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:6149816482:android:c185f241471d3f981357fb",
+        "android_client_info": {
+          "package_name": "com.moringaschool.ladiesspot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "6149816482-bmutealm966i2i44s9r3qe4chdghd08b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnY5NgOmTAJzyq3Jt9BZvPb1_dRrYviTs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "6149816482-bmutealm966i2i44s9r3qe4chdghd08b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
