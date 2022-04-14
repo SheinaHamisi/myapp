@@ -1,8 +1,13 @@
 package com.moringaschool.ladiesspot.models;
 
+import org.parceler.Parcel;
+
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Salon {
+
+@Parcel
+public class Salon implements Serializable  {
     private Long id;
     private String name;
     private String image;
@@ -10,6 +15,7 @@ public class Salon {
     private String phone;
     private Integer rating;
     private String workingHours;
+    private String pushId;
 
     public Salon() {
     }
@@ -104,5 +110,13 @@ public class Salon {
                 ", rating=" + rating +
                 ", workingHours=" + workingHours +
                 '}';
+    }
+
+    public String getPushId() {
+        return pushId;
+    }
+
+    public void setPushId(String pushId) {
+        this.pushId = pushId;
     }
 }

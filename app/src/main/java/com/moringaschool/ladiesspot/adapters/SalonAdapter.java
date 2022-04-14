@@ -45,9 +45,6 @@ public class SalonAdapter extends RecyclerView.Adapter<SalonAdapter.SalonViewHol
                 .asBitmap()
                 .load(salon.get(position).getImage())
                 .into(holder.image);
-
-
-
     }
 
     @Override
