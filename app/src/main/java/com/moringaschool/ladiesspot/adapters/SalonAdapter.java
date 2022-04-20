@@ -5,6 +5,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -37,6 +39,8 @@ public class SalonAdapter extends RecyclerView.Adapter<SalonAdapter.SalonViewHol
 
     @Override
     public void onBindViewHolder(@NonNull SalonViewHolder holder, int position) {
+        Animation animation = AnimationUtils.loadAnimation(holder.itemView.getContext(), android.R.anim.slide_out_right);
+        holder.itemView.startAnimation(animation);
         holder.nameDisplay.setText(salon.get(position).getName());
         holder.locationDisplay.setText(salon.get(position).getLocation());
         holder.phoneDisplay.setText(salon.get(position).getPhone());

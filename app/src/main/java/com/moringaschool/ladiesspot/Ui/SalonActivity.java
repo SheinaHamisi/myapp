@@ -8,13 +8,15 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.SearchView;
-
+import android.widget.TextView;
+import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -38,6 +40,9 @@ import retrofit2.Retrofit;
 
 public class SalonActivity extends AppCompatActivity{
     @BindView(R.id.recyclerview) RecyclerView recyclerView;
+  
+    @BindView(R.id.errorTextView) TextView mErrorTextView;
+    private static final String TAG = SalonActivity.class.getSimpleName();
     RetrofitBuilder retrofitBuilder;
     List<Salon> allSalons;
     private SharedPreferences mSharedPreferences;
@@ -63,6 +68,8 @@ public class SalonActivity extends AppCompatActivity{
             public void onResponse(Call<List<Salon>> call, Response<List<Salon>> response) {
                 if(response.isSuccessful()){
                     List<Salon> salons = response.body();
+                    Toast.makeText(SalonActivity.this, "success " + response.body().get(0).getName(), Toast.LENGTH_SHORT).show() ;
+
                     allSalons.addAll(salons);
                     startAdapter(allSalons);
                 }
@@ -71,9 +78,60 @@ public class SalonActivity extends AppCompatActivity{
 
             @Override
             public void onFailure(Call<List<Salon>> call, Throwable t) {
+                Log.e(TAG, "onFailure: ",t );
+                showFailureMessage();
 
             }
         });
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_search, menu);
+        inflater.inflate(R.menu.menu_main, menu);
+        ButterKnife.bind(this);
+
+
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mEditor = mSharedPreferences.edit();
+
+        MenuItem menuItem = menu.findItem(R.id.action_search);
+        SearchView searchView = (SearchView) menuItem.getActionView();
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String allSalons ){
+                addToSharedPreferences(allSalons);
+                return false;
+            }
+            @Override
+            public boolean onQueryTextChange(String allSalons ) {
+                return false;
+            }
+        });
+
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.action_logout) {
+            logout();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+    private void logout() {
+        FirebaseAuth.getInstance().signOut();
+        Intent intent = new Intent(SalonActivity.this, LoginActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
+    }
+    private void addToSharedPreferences(String allSalons) {
+        mEditor.putString(Constant.PREFERENCES_SALON_KEY, allSalons).apply();
     }
 
 
@@ -131,6 +189,14 @@ public class SalonActivity extends AppCompatActivity{
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
+    private void showFailureMessage() {
+        mErrorTextView.setText("Something went wrong. Please check your Internet connection and try again later");
+        mErrorTextView.setVisibility(View.VISIBLE);
+    }
 
+    private void showUnsuccessfulMessage() {
+        mErrorTextView.setText("Something went wrong. Please try again later");
+        mErrorTextView.setVisibility(View.VISIBLE);
+    }
 
 }

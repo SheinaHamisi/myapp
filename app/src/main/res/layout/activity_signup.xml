@@ -134,27 +134,31 @@
 
     <Button
         android:id="@+id/signup"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
+
         android:layout_marginEnd="8dp"
         android:backgroundTint="@color/button"
         android:text="Sign up"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+        app:layout_constraintTop_toBottomOf="@+id/member" />
+
 
     <TextView
         android:id="@+id/member"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+
+        android:layout_marginTop="16sp"
+
         android:text="Already a Member"
-        app:layout_constraintEnd_toEndOf="@+id/signup"
-        app:layout_constraintHorizontal_bias="0.82"
-        app:layout_constraintStart_toStartOf="@+id/signup"
-        app:layout_constraintTop_toBottomOf="@+id/signup" />
+        app:layout_constraintEnd_toEndOf="@+id/cardView"
+        app:layout_constraintHorizontal_bias="0.12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
     <TextView
         android:id="@+id/login"
@@ -175,8 +179,10 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:text="Sign Up"
+        android:textStyle="bold"
         android:textColor="@color/white"
-        android:textSize="24dp"
+        android:textSize="50dp"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

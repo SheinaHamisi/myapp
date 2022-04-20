@@ -2,9 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".Ui.LoginActivity">
 
     <androidx.cardview.widget.CardView
@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="80dp"
         android:layout_marginEnd="8dp"
         android:background="@color/white"
         android:orientation="vertical"
@@ -28,6 +28,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/email"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -35,8 +36,8 @@
                 android:layout_marginEnd="24dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/logintitle"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                app:layout_constraintTop_toBottomOf="@+id/logintitle">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -48,6 +49,9 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/password"
+
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -58,8 +62,8 @@
                 app:endIconTint="@color/black"
                 app:layout_constraintEnd_toEndOf="@+id/email"
                 app:layout_constraintStart_toStartOf="@+id/email"
-                app:layout_constraintTop_toBottomOf="@+id/email"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                app:layout_constraintTop_toBottomOf="@+id/email">
+
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -81,6 +85,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Recover Password"
+        android:textStyle="bold"
         android:textColor="@color/login"
         app:layout_constraintEnd_toEndOf="@+id/cardView"
         app:layout_constraintHorizontal_bias="0.97"
@@ -104,6 +109,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="or continue with"
+        android:textStyle="bold"
+        android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="@+id/Login"
         app:layout_constraintStart_toStartOf="@+id/Login"
         app:layout_constraintTop_toBottomOf="@+id/Login" />
@@ -114,6 +121,7 @@
         android:layout_height="16dp"
         android:layout_marginTop="16sp"
         android:text="Not a member"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/cardView"
         app:layout_constraintHorizontal_bias="0.06"
         app:layout_constraintStart_toStartOf="@+id/cardView"
@@ -125,24 +133,62 @@
         android:layout_height="wrap_content"
         android:text="Register Now"
         android:textColor="@color/login"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/member"
         app:layout_constraintStart_toEndOf="@+id/member"
         app:layout_constraintTop_toTopOf="@+id/member"
         app:layout_constraintVertical_bias="0.0" />
+
 
     <TextView
         android:id="@+id/logintitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="104dp"
         android:layout_marginEnd="24dp"
         android:text="Login"
-        android:textStyle="bold"
         android:textColor="@color/white"
-        android:textSize="32dp"
+        android:textSize="50sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/socialicons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@+id/continue_with"
+        app:layout_constraintVertical_bias="0.13">
+
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="20dp"
+            android:src="@drawable/google" />
+
+        <ImageView
+            android:id="@+id/google"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="20dp"
+            android:src="@drawable/facebook" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="20dp"
+            android:src="@drawable/twitter" />
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

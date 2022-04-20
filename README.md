@@ -13,8 +13,11 @@ Runs smoothly on Java 8
 ## Apk live link
 https://ufile.io/b34rh7rq
 
+##App new live link
+https://ufile.io/a2i6vmt8
+
 ## Known Bugs
-There are no known bugs at the moment
+There are no known bugs at the moment.
 ## Technologies Used
 Java, XML, Android
 ## Support and contact details
