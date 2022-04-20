@@ -15,6 +15,18 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/dependencies.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/LGPL2.1'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/notice.txt'
+    }
 
     buildTypes {
         release {
@@ -42,12 +54,29 @@ dependencies {
     //    Importing butterknife
     implementation 'com.jakewharton:butterknife:10.2.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
-//    Importing retrofit
+    //    Importing retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.5.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
-//    importing recylerview
+    //    importing recylerview
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
-//    importing Glide
+    //    importing Glide
     implementation 'com.github.bumptech.glide:glide:4.13.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.13.0'
+
+    //Firebase Dependencies
+
+    // Import the Firebase BoM
+    implementation platform('com.google.firebase:firebase-bom:29.3.0')
+    //Import the Firebase analytics
+    implementation 'com.google.firebase:firebase-analytics'
+    //    importing firebase database
+    implementation 'com.google.firebase:firebase-database'
+    //    importing firebase ui database
+    implementation 'com.firebaseui:firebase-ui-database:7.1.1'
+
+    // Parceler
+    implementation 'org.parceler:parceler-api:1.1.12'
+    annotationProcessor 'org.parceler:parceler:1.1.12'
+
+
 }

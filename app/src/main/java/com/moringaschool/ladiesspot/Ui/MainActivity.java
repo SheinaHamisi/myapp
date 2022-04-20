@@ -14,7 +14,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
-    @BindView(R.id.button) Button button;
+    @BindView(R.id.start) Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
