@@ -19,6 +19,17 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.moringaschool.ladiesspot.Ui.MainActivity"></meta-data>
         </activity>
+
+        <activity
+            android:name=".Ui.SalonActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MaterialComponents.Light.DarkActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.moringaschool.ladiesspot.Ui.MainActivity">
+            </meta-data>
+
+        </activity>
         <activity
             android:name=".Ui.SignupActivity"
             android:exported="false" />

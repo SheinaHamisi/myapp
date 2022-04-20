@@ -133,6 +133,7 @@ public class SignupActivity extends AppCompatActivity  implements View.OnClickLi
         }
         return isGoodEmail;
     }
+  
 //    @Override
 //    public void onStart() {
 //        super.onStart();
